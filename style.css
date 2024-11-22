@@ -1,0 +1,614 @@
+/* Pengaturan untuk section intro (judul dan paragraf di atas header) */
+html {
+  scroll-behavior: smooth;
+}
+
+.intro {
+  text-align: center;
+  margin-top: 50px; /* Jarak atas agar tidak terlalu rapat dengan bagian atas layar */
+}
+
+.intro h1 {
+  font-size: 2.5em;
+  color: #000000; /* Warna putih agar kontras dengan latar belakang */
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #000000;
+  max-width: 80%; /* Membatasi lebar paragraf */
+  margin: 0 auto; /* Memusatkan paragraf */
+  line-height: 1.6;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-image: url("bg.jpg"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Memastikan gambar memenuhi layar */
+  background-position: center center; /* Memusatkan gambar */
+  background-attachment: fixed; /* Gambar tetap saat menggulir */
+  background-repeat: no-repeat; /* Tidak mengulang gambar */
+  height: 100vh; /* Layar penuh */
+  color: #333; /* Warna teks default */
+}
+
+/* Header */
+header {
+  width: 50%; /* Lebar header hanya 50% layar */
+  margin: 20px auto; /* Memusatkan secara horizontal */
+  padding: 10px 20px;
+  background-color: rgba(19, 76, 175, 0.3); /* Warna gelap transparan 30% */
+  color: rgb(0, 0, 0); /* Warna teks putih */
+  text-align: center;
+  border-radius: 10px; /* Membuat sudut membulat */
+  box-shadow: 0 4px 8px rgba(4, 76, 220, 0.611); /* Memberikan bayangan lembut */
+}
+
+/* Galeri kamar */
+.room-gallery {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Memusatkan galeri di tengah layar */
+}
+
+.room-gallery h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+.room-gallery p {
+  display: flex;
+  justify-content: center; /* Menyusun teks ke tengah horizontal */
+  align-items: center; /* Menyusun teks ke tengah vertikal */
+  margin: 20px auto; /* Memberikan jarak atas dan bawah */
+  max-width: 90%; /* Membatasi lebar agar tidak terlalu melebar pada layar besar */
+  font-size: 1.2rem; /* Ukuran font untuk paragraf */
+  line-height: 1.5; /* Jarak antar baris */
+  color: #000000;
+  font-family: Arial, sans-serif; /* Menggunakan font yang lebih ramah di layar */
+}
+@media screen and (max-width: 768px) {
+  .room-gallery p {
+    text-align: center; /* Ubah teks menjadi rata tengah */
+    font-size: 1em; /* Kurangi ukuran font untuk kenyamanan */
+    padding: 0 10px; /* Sesuaikan padding untuk layar kecil */
+  }
+}
+@media screen and (max-width: 480px) {
+  .room-gallery p {
+    text-align: center; /* Tetap rata tengah */
+    font-size: 0.9em; /* Ukuran font lebih kecil */
+    line-height: 1.4; /* Sesuaikan spasi antar baris */
+    padding: 0 5px; /* Lebih sempit untuk perangkat kecil */
+  }
+}
+
+/* Kontainer kamar */
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Layout responsif */
+  gap: 20px;
+}
+
+/* Setiap kamar */
+.room {
+  background: rgba(255, 255, 255, 0.9); /* Latar putih transparan */
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Membuat sudut membulat */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(62, 16, 246, 0.1); /* Bayangan lembut */
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.room:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+  background: rgba(225, 225, 225, 1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar kamar */
+.room img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Teks deskripsi dan harga */
+.room p {
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Tombol umum */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Tombol Pesan */
+button:first-of-type {
+  background-color: #4caf50;
+  color: white;
+}
+
+button:first-of-type:hover {
+  background-color: #45a049;
+  transform: scale(1.1); /* Zoom tombol saat hover */
+}
+
+/* Tombol Detail */
+.btn-detail {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-detail:hover {
+  background-color: #1e88e5;
+  transform: scale(1.1); /* Zoom tombol saat hover */
+}
+
+/* Tombol Pesan Kamar */
+.btn-book {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Modal Styling Detail */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Gelap dengan opacity */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out; /* Animasi saat modal muncul */
+}
+
+/* Kontainer utama untuk form pemesanan dan pembayaran */
+.form-container {
+  display: flex; /* Menyusun form pemesanan dan pembayaran berdampingan */
+  justify-content: space-between; /* Menyebarkan ruang di antara form */
+  gap: 30px; /* Memberikan jarak antar form */
+  flex-wrap: wrap; /* Responsif pada layar kecil */
+  max-width: 1200px;
+  margin: 30px auto; /* Memusatkan form */
+  padding: 0 15px; /* Menambah ruang di sisi kiri dan kanan kontainer */
+}
+
+/* Styling untuk form pemesanan */
+form.pemesanan {
+  width: 48%; /* Lebar form pemesanan (kurang dari setengah lebar kontainer) */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk form pembayaran */
+form.pembayaran {
+  width: 48%; /* Lebar form pembayaran (kurang dari setengah lebar kontainer) */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input style untuk form pemesanan dan pembayaran */
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="email"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 90%; /* Mengatur input agar memenuhi lebar form */
+  transition: border-color 0.3s;
+}
+
+/* Mengatur ukuran input saat fokus */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Label styling */
+label {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Styling tombol pesan sekarang */
+button[type="submit"] {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%; /* Tombol memenuhi lebar form */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Styling untuk label harga total dan jumlah pembayaran */
+h4 {
+  color: #4caf50;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Styling untuk input pembayaran */
+input[type="text"]#payment-amount,
+input[type="text"]#total-price {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  width: 70%;
+}
+
+/* Responsif: untuk layar kecil, form akan ditumpuk */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column; /* Menumpuk form pemesanan dan pembayaran */
+    padding: 0 10px; /* Mengurangi padding untuk layar kecil */
+  }
+  form.pemesanan,
+  form.pembayaran {
+    width: 100%; /* Form akan memenuhi lebar layar */
+  }
+  button[type="submit"] {
+    width: 100%; /* Tombol juga memenuhi lebar layar */
+  }
+}
+
+.modal-content {
+  background-color: #ffffff; /* Warna dasar putih */
+  padding: 20px;
+  border-radius: 15px; /* Membulatkan sudut modal */
+  width: 90%;
+  max-width: 500px; /* Batas lebar maksimal */
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Bayangan yang lembut */
+  animation: slideDown 0.4s ease-out; /* Animasi muncul dari atas */
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Gelap dengan opacity */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out; /* Animasi saat modal muncul */
+}
+
+/* Animasi Slide Down */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Membulatkan sudut gambar */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Efek zoom */
+}
+
+.modal-content img:hover {
+  transform: scale(1.05); /* Zoom-in saat hover */
+}
+
+.modal-content h3 {
+  margin: 10px 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.modal-content p {
+  color: #555;
+  font-size: 1em;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Tombol Close */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.close:hover {
+  color: white;
+  background: #e74c3c; /* Warna merah terang */
+}
+
+/* Container untuk slider gambar */
+.image-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gambar di modal */
+.image-slider img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 0 40px; /* Memberi ruang untuk tombol Previous dan Next */
+}
+
+/* Tombol navigasi Next dan Prev */
+.image-slider .prev,
+.image-slider .next {
+  position: absolute;
+  top: 50%; /* Posisi vertikal tombol di tengah gambar */
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+  color: white;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  z-index: 1000; /* Memastikan tombol berada di atas gambar */
+  display: flex; /* Tambahan untuk memastikan ukuran tombol stabil */
+  justify-content: center;
+  align-items: center;
+}
+
+.image-slider .prev {
+  left: 10px; /* Jarak tombol kiri */
+}
+
+.image-slider .next {
+  right: 10px; /* Jarak tombol kanan */
+}
+
+/* Hover efek untuk tombol */
+.image-slider .prev:hover,
+.image-slider .next:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Latar belakang lebih terang */
+  color: black; /* Teks menjadi hitam */
+  transform: scale(1.1);
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+  .image-slider .prev,
+  .image-slider .next {
+    font-size: 1.5em; /* Ukuran font lebih kecil */
+    padding: 12px; /* Ukuran tombol lebih kecil */
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-slider {
+    position: relative; /* Kontainer relatif untuk menjaga posisi tombol */
+    overflow: hidden; /* Pastikan kontainer tidak meluber */
+  }
+
+  /* Ubah ukuran tombol prev dan next agar lebih kecil dan tidak menghalangi gambar */
+  button.prev,
+  button.next {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .image-slider .prev,
+  .image-slider .next {
+    font-size: 1.2em; /* Ukuran font lebih kecil */
+    padding: 10px; /* Tombol lebih kecil */
+    width: 35px;
+    height: 35px;
+  }
+
+  .image-slider .prev {
+    left: 5px; /* Jarak lebih kecil dari tepi kiri */
+  }
+  .image-slider .next {
+    right: 5px; /* Jarak lebih kecil dari tepi kanan */
+  }
+
+  /* Tambahkan aturan untuk mengatur tombol agar tidak menumpuk */
+  .image-slider img {
+    width: 100%; /* Gambar responsif memenuhi kontainer */
+    height: auto;
+  }
+}
+
+/* Map Section Styling */
+.map-section {
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.map-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333; /* Warna teks gelap */
+  font-family: "Arial", sans-serif; /* Font profesional */
+  text-transform: uppercase; /* Teks kapital */
+  letter-spacing: 1.5px; /* Spasi antar huruf */
+}
+
+.map-container {
+  max-width: 600px; /* Ukuran maksimal peta */
+  height: 300px; /* Tinggi peta */
+  margin: 0 auto;
+  border: 2px solid #ddd; /* Border tipis */
+  border-radius: 12px; /* Sudut melengkung */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Hilangkan border bawaan */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .map-container {
+    max-width: 90%; /* Sesuaikan ukuran pada layar kecil */
+    height: 250px; /* Kurangi tinggi */
+  }
+
+  .map-section h2 {
+    font-size: 18px; /* Ukuran font lebih kecil */
+  }
+}
+
+/* Footer styling */
+footer {
+  background-color: #333; /* Latar belakang gelap */
+  color: white; /* Teks putih */
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Pastikan lebar footer mengikuti lebar layar */
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar footer */
+  position: relative;
+  bottom: 0;
+  margin: 0 auto; /* Memastikan footer tetap di tengah */
+}
+
+/* Konten footer */
+footer .footer-content {
+  max-width: 1200px; /* Lebar konten footer sesuai dengan lebar konten utama */
+  margin: 0 auto; /* Memusatkan konten */
+}
+
+footer .footer-content a {
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.5em; /* Ukuran ikon */
+}
+
+footer .social-links a:hover {
+  color: #4caf50; /* Warna hijau saat hover */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  footer .social-links a {
+    font-size: 1.2em; /* Ukuran ikon lebih kecil di layar kecil */
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+  }
+  .modal-content h3 {
+    font-size: 1.5em;
+  }
+  .slider button {
+    font-size: 1.5rem; /* Ukuran tombol lebih kecil */
+    padding: 8px;
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  header {
+    width: 70%; /* Header lebih lebar pada layar kecil */
+  }
+  .room-gallery {
+    padding: 10px;
+  }
+  button {
+    padding: 8px 12px;
+    width: 100%;
+  }
+  body {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    width: 90%; /* Header memenuhi hampir seluruh layar pada layar kecil */
+  }
+  .rooms {
+    grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+  }
+  button {
+    width: 100%; /* Tombol memenuhi lebar kontainer pada layar kecil */
+  }
+}

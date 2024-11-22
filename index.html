@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Kos Rapima</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link untuk Font Awesome (ikon) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-image: url(gambar/bg.jpg)">
+    <header>
+      <h1>RAPIMA KOST🐎</h1>
+      <h2>
+        Alamat : Jln. Ayahanda / Belanga Sei Putih Tengah, Kota Medan, Sumatera
+        Utara.
+      </h2>
+    </header>
+    <!-- Judul dan paragraf di atas header -->
+    <section class="intro">
+      <h1>Selamat Datang di RAPIMA KOST🐎</h1>
+      <p>
+        Temukan kamar idaman Anda dengan berbagai pilihan harga dan fasilitas.
+        Kami menyediakan kenyamanan dan kemudahan untuk Anda.
+      </p>
+    </section>
+    <main>
+      <section class="room-gallery">
+        <h2>Daftar Kamar</h2>
+        <p>
+          Sebelum Kamu Pesan Kamar, Sebaiknya Silahkan Datang Terlebih Dahulu ke
+          Tempat Agar Tidak Terjadi Kesalahpahaman.
+        </p>
+        <div class="rooms">
+          <!-- Room 1 -->
+          <div class="room">
+            <img src="gambar/gambar1.jpeg" alt="Nomor 101" />
+            <p>Nomor 101</p>
+            <p>Rp. 700.000 / bulan</p>
+            <button
+              class="btn-detail"
+              onclick="showDetail('Nomor 101', 'Fasilitas: Kamar Mandi Dalam, Lemari, Kasur, Free WIFI, Free Air')"
+            >
+              Detail
+            </button>
+            <button
+              class="btn-book"
+              onclick="openBookingForm('Nomor 101', 'Rp. 700.000')"
+            >
+              Pesan Kamar
+            </button>
+          </div>
+          <!-- Room 2 -->
+          <div class="room">
+            <img src="gambar/gambar2.jpeg" alt="Nomor 102" />
+            <p>Nomor 102</p>
+            <p>Rp. 1.500.000 / bulan</p>
+            <button
+              class="btn-detail"
+              onclick="showDetail('Nomor 102', 'Fasilitas: AC, Alat Mandi, Kasur, Free Air, Free WIFI')"
+            >
+              Detail
+            </button>
+            <button
+              class="btn-book"
+              onclick="openBookingForm('Nomor 102', 'Rp. 1.500.000')"
+            >
+              Pesan Kamar
+            </button>
+          </div>
+          <!-- Room 3 -->
+          <div class="room">
+            <img src="gambar/gambar3.jpeg" alt="Nomor 103" />
+            <p>Nomor 103</p>
+            <p>Rp. 1.800.000 / bulan</p>
+            <button
+              class="btn-detail"
+              onclick="showDetail('Nomor 103', 'Fasilitas: TV, Kasur, Bantal, Meja, Kursi, Jemuran, Tong Sampah, Free Listrik, Free WIFI, Free Air')"
+            >
+              Detail
+            </button>
+            <button
+              class="btn-book"
+              onclick="openBookingForm('Nomor 103', 'Rp. 1.800.000')"
+            >
+              Pesan Kamar
+            </button>
+          </div>
+          <!-- Room 4 -->
+          <div class="room">
+            <img src="gambar/gambar4.jpeg" alt="Nomor 104" />
+            <p>Nomor 104</p>
+            <p>Rp. 2.000.000 / bulan</p>
+            <button
+              class="btn-detail"
+              onclick="showDetail('Nomor 104','Fasilitas: TV, Kasur, Bantal, Meja, Kursi, Jemuran, Tong Sampah, Free Listrik, Free WIFI, Free Air')"
+            >
+              Detail
+            </button>
+            <button
+              class="btn-book"
+              onclick="openBookingForm('Nomor 104', 'Rp. 2.000.000')"
+            >
+              Pesan Kamar
+            </button>
+          </div>
+          <!-- Room 5 -->
+          <div class="room">
+            <img src="gambar/gambar5.jpeg" alt="Nomor 105" />
+            <p>Nomor 105</p>
+            <p>Rp. 700.000 / bulan</p>
+            <button
+              class="btn-detail"
+              onclick="showDetail('Nomor 105', 'Fasilitas: Kasur, Bantal, Jemuran, Tong Sampah, Free WIFI, Free Air')"
+            >
+              Detail
+            </button>
+            <button
+              class="btn-book"
+              onclick="openBookingForm('Nomor 105', 'Rp. 700.000')"
+            >
+              Pesan Kamar
+            </button>
+          </div>
+          <!-- Room 6 -->
+          <div class="room">
+            <img src="gambar/gambar6.jpeg" alt="Nomor 106" />
+            <p>Nomor 106</p>
+            <p>Rp. 700.000 / bulan</p>
+            <button
+              class="btn-detail"
+              onclick="showDetail('Nomor 106', 'Fasilitas: Kasur, Bantal, Jemuran, Tong Sampah, Free WIFI, Free Air')"
+            >
+              Detail
+            </button>
+            <button
+              class="btn-book"
+              onclick="openBookingForm('Nomor 106', 'Rp. 700.000')"
+            >
+              Pesan Kamar
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal Popup Detail -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <div class="image-slider">
+          <button class="prev" onclick="prevImage()">❮</button>
+          <img id="modal-image" src="image1.jpg" alt="Gambar 1" />
+          <button class="next" onclick="nextImage()">❯</button>
+        </div>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+
+    <!-- Modal Pemesanan dan Pembayaran -->
+    <div id="booking-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBookingModal()">&times;</span>
+        <h3>Form Pemesanan</h3>
+        <form id="bookingForm">
+          <input type="hidden" id="room-name" name="room-name" value="" />
+
+          <label for="name">Nama:</label>
+          <input type="text" id="name" required /><br />
+
+          <label for="phone">No. HP:</label>
+          <input type="tel" id="phone" required /><br />
+
+          <label for="checkin-date">Tanggal Masuk:</label>
+          <input
+            type="date"
+            id="checkin-date"
+            required
+            onchange="setCheckoutDate()"
+          /><br />
+
+          <label for="checkout-date" id="checkout-label" style="display: none"
+            >Tanggal Keluar / Perpanjangan:</label
+          >
+          <input
+            type="date"
+            id="checkout-date"
+            style="display: none"
+            disabled
+          /><br />
+
+          <h4>Rincian Pembayaran</h4>
+          <label for="total-price">Harga Total:</label>
+          <input type="text" id="total-price" readonly /><br />
+
+          <label for="payment-amount">Jumlah Pembayaran:</label>
+          <input type="text" id="payment-amount" readonly /><br />
+
+          <button type="submit">Pesan Sekarang</button>
+        </form>
+      </div>
+    </div>
+
+    <section class="map-section">
+      <h2>Alamat</h2>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.9545394792253!2d98.6512622744708!3d3.5978920502313425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f002b75194f%3A0xdc95daa0cdb7aede!2sRapima%20Kost!5e0!3m2!1sen!2sid!4v1732184563237!5m2!1sen!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>Created by <a href="">El</a>. | &copy; 2024.</p>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" class="facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://instagram.com/eli.sigalingging"
+            target="_blank"
+            class="instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://x.com" target="_blank" class="twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://wa.me/6281265557216?text=Halo,%20saya%20ingin%20menanyakan%20tentang%20kos-kosan%20ini."
+            target="_blank"
+            title="Chat via WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
